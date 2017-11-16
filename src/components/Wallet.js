@@ -40,9 +40,7 @@ export class Wallet extends Component {
   render() {
     return (
       <div>
-        <h3 className="balance">
-          Wallet balance: {this.props.balance}
-        </h3>
+        <h3 className="balance">Wallet balance: {this.props.balance}</h3>
         <br />
         <input
           className="input-wallet"
@@ -60,6 +58,6 @@ export class Wallet extends Component {
   }
 }
 
-export default connect(state => ({ balance: state }), { deposit, withdraw })(
+export default connect(({ balance }) => ({ balance }), { deposit, withdraw })(
   Wallet
 );
